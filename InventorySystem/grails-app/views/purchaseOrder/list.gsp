@@ -24,9 +24,11 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'purchaseOrder.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="poDescription" title="${message(code: 'purchaseOrder.poDescription.label', default: 'Po Description')}" />
+                            <g:sortableColumn property="invoiceNumber" title="${message(code: 'purchaseOrder.invoiceNumber.label', default: 'Invoice Number')}" />
                         
-                            <g:sortableColumn property="poDateTime" title="${message(code: 'purchaseOrder.poDateTime.label', default: 'Po Date Time')}" />
+                            <g:sortableColumn property="orderDateTime" title="${message(code: 'purchaseOrder.orderDateTime.label', default: 'Order Date Time')}" />
+                        
+                            <g:sortableColumn property="totalPrice" title="${message(code: 'purchaseOrder.totalPrice.label', default: 'Total Price')}" />
                         
                         </tr>
                     </thead>
@@ -36,9 +38,11 @@
                         
                             <td><g:link action="show" id="${purchaseOrderInstance.id}">${fieldValue(bean: purchaseOrderInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: purchaseOrderInstance, field: "poDescription")}</td>
+                            <td>${fieldValue(bean: purchaseOrderInstance, field: "invoiceNumber")}</td>
                         
-                            <td><g:formatDate date="${purchaseOrderInstance.poDateTime}" /></td>
+                            <td><g:formatDate date="${purchaseOrderInstance.orderDateTime}" /></td>
+                        
+                            <td>${fieldValue(bean: purchaseOrderInstance, field: "totalPrice")}</td>
                         
                         </tr>
                     </g:each>

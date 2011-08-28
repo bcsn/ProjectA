@@ -1,16 +1,21 @@
 package inventorysystem
 
 class PurchaseOrder {
-
-	String poDescription
-	Date poDateTime
 	
-	static belongsTo = [Employee]
-	static hasMany = [orderOwners:Employee]
-
+	String invoiceNumber
+	Date orderDateTime
+	float totalPrice = 0.0
+	
+	static hasMany = [items: Product]
+	static belongsTo = [User]
+	
     static constraints = {
-		
-		poDescription (nullable:false)
-		poDateTime (nullable:false)
+		invoiceNumber	(nullable:false)
+		orderDateTime	(nullable:false)
+		totalPrice		(nullable:false)
     }
+	
+	String toString(){
+		return "$invoiceNumber - $orderDateTime"
+	}
 }

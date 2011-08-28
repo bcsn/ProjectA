@@ -30,26 +30,33 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="purchaseOrder.poDescription.label" default="Po Description" /></td>
+                            <td valign="top" class="name"><g:message code="purchaseOrder.invoiceNumber.label" default="Invoice Number" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: purchaseOrderInstance, field: "poDescription")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="purchaseOrder.poDateTime.label" default="Po Date Time" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${purchaseOrderInstance?.poDateTime}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: purchaseOrderInstance, field: "invoiceNumber")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="purchaseOrder.orderOwners.label" default="Order Owners" /></td>
+                            <td valign="top" class="name"><g:message code="purchaseOrder.orderDateTime.label" default="Order Date Time" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${purchaseOrderInstance?.orderDateTime}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="purchaseOrder.totalPrice.label" default="Total Price" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: purchaseOrderInstance, field: "totalPrice")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="purchaseOrder.items.label" default="Items" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
-                                <g:each in="${purchaseOrderInstance.orderOwners}" var="o">
-                                    <li><g:link controller="employee" action="show" id="${o.id}">${o?.encodeAsHTML()}</g:link></li>
+                                <g:each in="${purchaseOrderInstance.items}" var="i">
+                                    <li><g:link controller="product" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>
