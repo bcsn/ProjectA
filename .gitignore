@@ -7,5 +7,5 @@ classes
 logs
 *.ser
 .metadata
-devDb*
+devDB*
 *.prefs
