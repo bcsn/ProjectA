@@ -17,6 +17,6 @@ class Product {
     }
 	
 	String toString(){
-		return "$productCode - $productName"
+		return "$productCode - $productName - $productDescription"
 	}
 }
