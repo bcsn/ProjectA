@@ -63,6 +63,13 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="purchaseOrder.purchaseOrderOwner.label" default="Purchase Order Owner" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="user" action="show" id="${purchaseOrderInstance?.purchaseOrderOwner?.id}">${purchaseOrderInstance?.purchaseOrderOwner?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

@@ -30,6 +30,8 @@
                         
                             <g:sortableColumn property="totalPrice" title="${message(code: 'purchaseOrder.totalPrice.label', default: 'Total Price')}" />
                         
+                            <th><g:message code="purchaseOrder.purchaseOrderOwner.label" default="Purchase Order Owner" /></th>
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -43,6 +45,8 @@
                             <td><g:formatDate date="${purchaseOrderInstance.orderDateTime}" /></td>
                         
                             <td>${fieldValue(bean: purchaseOrderInstance, field: "totalPrice")}</td>
+                        
+                            <td>${fieldValue(bean: purchaseOrderInstance, field: "purchaseOrderOwner")}</td>
                         
                         </tr>
                     </g:each>

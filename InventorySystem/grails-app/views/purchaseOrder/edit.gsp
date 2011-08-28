@@ -67,6 +67,15 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="purchaseOrderOwner"><g:message code="purchaseOrder.purchaseOrderOwner.label" default="Purchase Order Owner" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: purchaseOrderInstance, field: 'purchaseOrderOwner', 'errors')}">
+                                    <g:select name="purchaseOrderOwner.id" from="${inventorysystem.User.list()}" optionKey="id" value="${purchaseOrderInstance?.purchaseOrderOwner?.id}"  />
+                                </td>
+                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>

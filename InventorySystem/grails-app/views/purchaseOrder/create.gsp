@@ -48,10 +48,28 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="items"><g:message code="purchaseOrder.items.label" default="Items" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: purchaseOrderInstance, field: 'items', 'errors')}">
+                                    <g:select name="items" from="${inventorysystem.Product.list()}" multiple="yes" optionKey="id" size="5" value="${purchaseOrderInstance?.items*.id}" />
+                                </td>
+                            </tr>
+                            
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="totalPrice"><g:message code="purchaseOrder.totalPrice.label" default="Total Price" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: purchaseOrderInstance, field: 'totalPrice', 'errors')}">
                                     <g:textField name="totalPrice" value="${fieldValue(bean: purchaseOrderInstance, field: 'totalPrice')}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="purchaseOrderOwner"><g:message code="purchaseOrder.purchaseOrderOwner.label" default="Purchase Order Owner" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: purchaseOrderInstance, field: 'purchaseOrderOwner', 'errors')}">
+                                    <g:select name="purchaseOrderOwner.id" from="${inventorysystem.User.list()}" optionKey="id" value="${purchaseOrderInstance?.purchaseOrderOwner?.id}"  />
                                 </td>
                             </tr>
                         
