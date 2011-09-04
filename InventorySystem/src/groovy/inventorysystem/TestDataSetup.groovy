@@ -1,9 +1,7 @@
 package inventorysystem
 
 class TestDataSetup {
-
-    // HELLO ACE :)
-    
+        
     void setupTestData() {
         setupCompany()
         setupProducts()
